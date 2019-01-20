@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+	<h1>My Pumidor>: Teas
+	<% if(authdata != null) {%>
+	<a href="/teas/add" class="btn btn-success pull-right">Add>: Teas </a>
+	<% } else {%>
+	<% } %>
+	</h1>
+
+	<div class="row teas">
+		<% for(var i=0; i<teas.length; i++) {%>
+			<div class="col-md-4 teas">
+				<a href = "/teas/details/<%=teas[i].id %>"><img src="/images/uploads/<%= teas[i].teaphoto %>"></a>
+				<h4 class="recipe-title text-center"><%= teas[i].recipe %></h4>
+				<p class="yearproduced-name text-center"><%= teas[i].yearproduced %></p>
+			</div>
+		<% } %>
+	</div>
+<% include ../partials/footer %>

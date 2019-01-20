@@ -1,0 +1,54 @@
+<% include ../partials/header %>
+	<a href="/teas" class="btn">Go Back</a>
+	<h3><%=tea.yearproduced %> - <%= tea.factory %> - <%=tea.recipe %></h1>
+	<hr />
+	<div class="row tea">
+		<div class="col-md-4">
+		<img src="/images/uploads/<%= tea.teaphoto %>">
+		</div>
+		<br />
+		<div class="col-md-11">
+		<br />
+		<ul class="list-group">
+			<li class="list-group-item"><strong>Year Produced>:</strong> 
+			<%= tea.yearproduced %></li>
+			<li class="list-group-item"><strong>Tea Type>:</strong> 
+			<%= tea.type %></li>
+			<li class="list-group-item"><strong>Factory>:</strong> 
+			<%= tea.factory %></li>
+			<li class="list-group-item"><strong>Recipe/Name>:</strong> 
+			<%= tea.recipe %></li>
+			<li class="list-group-item"><strong>Amount(grams)>:</strong> 
+			<%= tea.amount %></li>
+			<li class="list-group-item"><strong>Container>:</strong> 
+			<%= tea.container %></li>
+			<li class="list-group-item"><strong>Material>:</strong> 
+			<%= tea.material %></li>
+			<li class="list-group-item"><strong>Original SL>:</strong> 
+			<%= tea.originalsl %></li>
+			<li class="list-group-item"><strong>Original SM>:</strong> 
+			<%= tea.originalsm %></li>
+			<li class="list-group-item"><strong>Current Store Date>:</strong> 
+			<%= tea.currentstoredate %></li>
+			<li class="list-group-item"><strong>Tasting Notes>:</strong> 
+			<%= tea.notes %></li>
+			<li class="list-group-item"><strong>Rating>:</strong> 
+			<%= tea.rating %></li>
+		</ul>
+		</div>
+	</div>
+<hr />
+	<div class="row">
+		<div class="col-md-12">
+			<h4> Tea Recipe/Name </h4>
+			<p><%= tea.recipe %></p>
+		</div>
+	</div>
+<br />
+	<hr />
+	<% if(authdata != null) {%>
+	<a href="/teas/edit/<%= id %>" class="btn btn-default"> >:Edit</a>
+	<a href="#" data-id="<%= id %>" class="delete-tea btn btn-danger"> >:Delete</a>
+	<% } else {%>
+	<% } %>
+<% include ../partials/footer %>

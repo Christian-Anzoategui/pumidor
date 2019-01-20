@@ -1,0 +1,78 @@
+<% include ../partials/header %>
+	<h1>Edit Tea</h1>
+	<form enctype="multipart/form-data" method="post" action="/teas/edit/<%=id %>">
+  
+  <div class="form-group">
+    <label>Tea Types</label>
+    <select name="type" class="form-control">
+      <% for(var i=0; i< types.length; i++) {%>
+        <option value = "<%= types[i].name %>"><%= types[i].name %>
+        </option>
+      <% } %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Year Produced</label>
+    <input type="number" class="form-control" name="yearproduced" placeholder="Year Produced" value="<%=tea.yearproduced%>">
+  </div>
+  
+  <div class="form-group">
+  	<label>Factory Name</label>
+  	<input type="text" class="form-control" name="factory" placeholder="Factory Name" value="<%=tea.factory%>">
+  </div>
+  
+  <div class="form-group">
+  	<label>Recipe or Name</label>
+  	<input type="text" class="form-control" name="recipe" placeholder="Recipe / Name"value="<%=tea.recipe%>">
+  </div>
+
+  <div class="form-group">
+    <label>Tea Amount</label>
+    <input type="number" class="form-control" name="amount" placeholder="in grams ex: 357" value="<%=tea.amount%>">
+  </div>
+
+  <div class="form-group">
+    <label>Tea Container/Shape</label>
+    <input type="text" class="form-control" name="container" placeholder="Cake/Brick/etc" value="<%=tea.container%>">
+  </div>
+  
+  <div class="form-group">
+    <label>Material</label>
+    <input type="text" class="form-control" name="material" placeholder="Material" value="<%=tea.material%>">
+  </div>
+  
+  <div class="form-group">
+    <label>Original Storage Location</label>
+    <input type="text" class="form-control" name="originalsl" placeholder="City, Country" value="<%=tea.originalsl%>">
+  </div>
+
+  <div class="form-group">
+    <label>Original Storage Method</label>
+    <input type="text" class="form-control" name="originalsm" placeholder="Traditional/Wet/Dry" value="<%=tea.originalsm%>">
+  </div>
+  
+    <div class="form-group">
+    <label>Date Stored in Current Pumidor</label>
+    <input type="text" class="form-control" name="currentstoreddate" placeholder="MM/YYYY" value="<%=tea.currentstoreddate%>">
+  </div>
+
+  <div class="form-group">
+    <label>Tasting Notes</label>
+    <input type="text" class="form-control" name="notes" placeholder="How does it feel on the tongue" value="<%=tea.notes%>">
+  </div>
+
+  <div class="form-group">
+    <label>Rating</label>
+    <input type="number" class="form-control" name="rating" placeholder="1-100" value="<%=tea.rating%>">
+  </div>
+
+  <div class="form-group">
+    <label>Tea Photo>: </label>
+    <input type="file" class="form-control" name="teaphoto" value="<%=tea.teaphoto%>">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+<a class="btn btn-danger" href="/teas">Close</a>
+</form>
+  
+<% include ../partials/footer %>
