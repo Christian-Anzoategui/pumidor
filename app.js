@@ -1,4 +1,8 @@
-var 
+//FireBase apiKey
+var credentials = require('./credentials');
+var api_key = credentials.api_key;
+
+var
 express = require('express'),
 path = require('path'),
 logger = require('morgan'),
@@ -8,13 +12,9 @@ session = require('express-session'),
 expressValidator = require('express-validator'),
 flash = require('connect-flash'),
 firebase = require('firebase');
-//FbRef = firebase.database().ref();
-
-
-//var fbRef = new firebase('https://laisalive-ca5f2.firebaseio.com/');
 
  var config = {
-    apiKey: "AIzaSyC0WmJ3aC8IDX2dxNKyNAFjMMnoqKn11s8",
+    apiKey: api_key,
     authDomain: "laisalive-ca5f2.firebaseapp.com",
     databaseURL: "https://laisalive-ca5f2.firebaseio.com",
     storageBucket: "laisalive-ca5f2.appspot.com",
